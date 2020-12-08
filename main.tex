@@ -13,6 +13,20 @@
   \usepackage[toc]{appendix}       % Appendix
   \usepackage{fancyhdr}            % Headings and Footers
   \usepackage{xcolor}              % Text Colors
+  \usepackage[style=apa,sortcites=true,sorting=nyt]{biblatex}  % Citations
+
+
+  % Bibliography Setup
+  %% Language Mappings
+  \DeclareLanguageMapping{english}{english-apa}
+  \DeclareLanguageMapping{american}{american-apa}
+  %% Bibliography File Path
+  \addbibresource{main.bib}
+  %% Categories for Specified Bibliography Items
+  %%% Category for sources not referenced in-text
+  \DeclareBibliographyCategory{consulted}
+  \addtocategory{consulted}{noauthor_business_nodate}
+  \addtocategory{consulted}{noauthor_college_nodate}
 
 
   % Hyperlink Setup
@@ -84,9 +98,61 @@
   % Initial Post
   \newpage
   \section{Initial Post}
-    Placeholder.
+    It has been a great class! Too bad it was so short, I feel like I barely
+      got to know anyone here!
+
+    \subsection{How My Skills Have Improved Over the Class}
+      Placeholder.
+
+
+    \subsection{Skill Progress}
+      I feel like it is not all that possible to be 100\% proficient in
+        \textit{every} interpersonal communication skill (or even a single
+        one of them), as there are \textbf{always} ways to improve or increase
+        one's understanding of another type of person.
+      \subsubsection{Skill With Most Improvement}
+        Placeholder.
+      \subsubsection{Skill With Least Improvement}
+        Placeholder.
+
+
+    \subsection{Working on These Skills}
+      \subsubsection{The Hardest Skill To Improve}
+        The hardest skill to improve by far was the understanding of the current
+          ``psychological context'', as stated by one of our course texts
+          \parencite{noauthor_communication_2013}.
+      \subsubsection{The Easist Skill To Improve}
+        Placeholder.
+      \subsubsection{Outside Influences Affecting The Use of Certain Skills}
+        Placeholder.
+
+
+    \subsection{Conclusion}
+      \subsection{When did I ``Turn a Corner''}
+        Placeholder.
+      \subsubsection{Improving Communication Skills After This Course}
+        Placeholder.
+
 
   % Replies
   % \include{tex/01-response.tex}
   % \include{tex/02-response.tex}
+
+
+  % Bibliography
+  %% Works Cited
+  \newpage
+  \printbibliography[%
+    title={References},%
+    heading={bibintoc},%
+    notcategory={consulted}%
+  ]
+  %% Works Consulted
+  \newpage
+  \nocite{*}
+  \printbibliography[%
+    title={Additional References},%
+    heading={bibintoc},%
+    category={consulted}%
+  ]
 \end{document}
